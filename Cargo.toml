@@ -5,15 +5,11 @@ authors = ["Tommy van der Vorst <tommy@pixelspark.nl>"]
 edition = "2018"
 
 [dependencies]
-serialport = "3.2.0"
-clap = "*"
+serialport = "3.*"
+clap = "2.*"
 regex = "1"
-iui = { git = "https://github.com/rust-native-ui/libui-rs.git" }
 
 [[bin]]
 name = "tymodem-cli"
 path = "src/tymodem-cli.rs"
 
-[[bin]]
-name = "tymodem-gui"
-path = "src/tymodem-gui.rs"

@@ -1,6 +1,6 @@
 use std::sync::mpsc::channel;
 use std::{thread, time};
-use serialport::prelude::*;
+use serialport::SerialPortSettings;
 use regex::Regex;
 use std::error::Error;
 use std::io::{self, Read};
@@ -47,7 +47,7 @@ impl Modem {
 		rx
 	}
 
-	fn read(config: ModemPort, sender: &std::sync::mpsc::Sender<ModemState>) -> Result<(), Box<Error>> {
+	fn read(config: ModemPort, sender: &std::sync::mpsc::Sender<ModemState>) -> Result<(), Box<dyn Error>> {
 		let mut settings: SerialPortSettings = Default::default();
 		settings.timeout = Duration::from_millis(10);
 
